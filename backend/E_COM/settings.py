@@ -47,11 +47,20 @@ INSTALLED_APPS = [
 ]
 
 REST_FRAMEWORK = {
+    # Pagination is not compatible with simple jason data transfer
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     # 'PAGE_SIZE': 10,
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAdminUser',
+
+    # IsAdminUser does not allow react to get data from API calls
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser',
+    ],
+    
+    # it is a good idea to disable the browseable API in production with this configuration
+    # 'DEFAULT_RENDERER_CLASSES': [
+    #     'rest_framework.renderers.JSONRenderer',
     # ],
+
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication'
     ],
