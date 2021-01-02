@@ -59,3 +59,30 @@ class ProductModelTest(TestCase):
         product = Product.objects.get(id=1)
         expected_object_creation_time = str(product.creation_time)
         self.assertEquals(expected_object_creation_time, date)
+
+
+class CommentTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        # Create a user
+        testuser1 = User.objects.create_user(
+            username='testuser1', password='abc123')
+        testuser1.save()
+        # Create a comment
+        test_Comment = Comment.objects.create(
+            commenter=testuser1,
+            title='Blog title',
+            comment='Body content...',
+            comment_time=date)
+        test_Comment.save()
+
+    def test_comment_content(self):
+        comment = Comment.objects.get(id=1)
+
+        commenter = f'{comment.commenter}'
+        body = f'{comment.comment}'
+        comment_time= str(comment.comment_time)
+
+        self.assertEqual(commenter, 'testuser1')
+        self.assertEqual(body, 'Body content...')
+        self.assertEqual(comment_time, date)
