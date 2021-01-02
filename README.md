@@ -4,10 +4,10 @@ A simple API model for design and implementation of store products.
 
 The code is in Python and JavaScript.
 
-* User API interface without credentials
+* User API interface without credentials                            
   <img src="Screenshot_2021-01-02_User_Instance_Django_REST_framewor_1.png"  width="700">
 
-* User API interface with credentials        
+* User API interface with credentials                            
   <img src="Screenshot_2021-01-02_User_Instance_Django_REST_framework_2.png"  width="700">
 
  
