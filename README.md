@@ -31,3 +31,8 @@ The code is in Python and JavaScript.
 * __Admin Interface:__ Products could be added and deleted in admin interface.
 
 * __API Interface:__ Products are available via API interface.
+
+
+### TODO
+
+* Implementing e-shop standards as described in [Django-SHOP documentation](https://django-shop.readthedocs.io/en/latest/index.html)
